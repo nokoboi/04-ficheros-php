@@ -23,7 +23,8 @@ if(is_dir($directorio)){
         // Leemos cada entrada del directorio
         while(($archivo = readdir($dh)) !== false){
             if($archivo != "." && $archivo != ".."){
-                if(esImagen2($directorio, $archivo)){
+                $rutaCompleta = $directorio.$archivo;
+                if(esImagen2($rutaCompleta)){
                     echo "<li>";
                     echo $archivo;
                     mostrarImagen($directorio,$archivo);

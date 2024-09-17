@@ -7,9 +7,13 @@
 //     return strpos($tipoMime,'image/') === 0;
 // }
 
-function esImagen2($directorio,$ruta){
-    // Construir la ruta completa del archivo
-    $rutaCompleta = $directorio . $ruta;
+/**
+ * Comprueba si un archivo es de tipo imagen
+ * Los tipos válidos son: 'jpg', 'jpeg', 'gif', 'png', 'bmp', 'webp'
+ * @param string $rutaCompleta $rutacompleta es la ruta completa del archivo a analizar
+ * @return bool false = si no es una imagen o true =  si es una imagen válida
+ */
+function esImagen2($rutaCompleta){
     
     // Obtener la extensión del archivo
     $extension = strtolower(pathinfo($rutaCompleta, PATHINFO_EXTENSION));
